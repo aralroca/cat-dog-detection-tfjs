@@ -1,6 +1,6 @@
-# New Project
+# Skin cancer detection
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+Tensorflow.js project
 
 ## Available Scripts
 
