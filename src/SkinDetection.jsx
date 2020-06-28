@@ -20,7 +20,7 @@ export default function SkinDetection() {
     const image = tf.reshape(tf.fromPixels(img), [1, 224, 224, 3]).toFloat();
     const pretrainedModelPrediction = pretrainedModel.predict(image);
     const modelPrediction = model.predict(pretrainedModelPrediction);
-    const prediction = modelPrediction.as1D().argMax().dataSync()[0];
+    const [prediction] = modelPrediction.as1D().argMax().dataSync();
     console.log({ prediction, modelPrediction });
   }
 
