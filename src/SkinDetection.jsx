@@ -16,12 +16,15 @@ export default function SkinDetection() {
   }
 
   async function predict() {
-    const img = document.querySelector("img");
-    const image = tf.reshape(tf.fromPixels(img), [1, 224, 224, 3]).toFloat();
+    const pixels = tf.browser.fromPixels(document.querySelector("img"));
+    const image = pixels.expandDims(0).toFloat().div(tf.scalar(127)).sub(
+      tf.scalar(1),
+    );
     const pretrainedModelPrediction = pretrainedModel.predict(image);
     const modelPrediction = model.predict(pretrainedModelPrediction);
     const [prediction] = modelPrediction.as1D().argMax().dataSync();
-    console.log({ prediction, modelPrediction });
+
+    console.log(prediction); // It's always 0...
   }
 
   if (!model) return "Loading the model...";

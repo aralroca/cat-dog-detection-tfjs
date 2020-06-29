@@ -12,14 +12,14 @@ export default function useLoadSkinDetectionModel() {
 
   useEffect(() => {
     async function loadModel() {
-      const mobilenet = await tf.loadModel(pretrainedModel.url);
+      const mobilenet = await tf.loadLayersModel(pretrainedModel.url);
       const layer = mobilenet.getLayer(pretrainedModel.layer);
       const pretrained = await tf.model({
-        inputs: mobilenet.inputs,
+        inputs: [mobilenet.inputs[0]],
         outputs: layer.output,
       });
 
-      const model = await tf.loadModel(
+      const model = await tf.loadLayersModel(
         "./model/ml-classifier-malignant-benign.json",
       );
 
