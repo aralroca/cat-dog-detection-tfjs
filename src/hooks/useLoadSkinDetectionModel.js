@@ -15,7 +15,7 @@ export default function useLoadSkinDetectionModel() {
       const mobilenet = await tf.loadLayersModel(pretrainedModel.url);
       const layer = mobilenet.getLayer(pretrainedModel.layer);
       const pretrained = await tf.model({
-        inputs: [mobilenet.inputs[0]],
+        inputs: mobilenet.inputs,
         outputs: layer.output,
       });
 

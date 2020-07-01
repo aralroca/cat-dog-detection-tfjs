@@ -17,14 +17,10 @@ export default function SkinDetection() {
 
   async function predict() {
     const pixels = tf.browser.fromPixels(document.querySelector("img"));
-    const image = pixels.expandDims(0).toFloat().div(tf.scalar(127)).sub(
-      tf.scalar(1),
-    );
-    const pretrainedModelPrediction = pretrainedModel.predict(image);
-    const modelPrediction = model.predict(pretrainedModelPrediction);
-    const [prediction] = modelPrediction.as1D().argMax().dataSync();
-
-    console.log(prediction); // It's always 0...
+    const image = tf.reshape(pixels, [1, 224, 224, 3]).toFloat();
+    const modelPrediction = model.predict(pretrainedModel.predict(image));
+    const [benign, malignant] = Array.from(modelPrediction.dataSync());
+    setPredictionStatus(benign > malignant ? 'Benign 😊' : 'Malignant 😞');
   }
 
   if (!model) return "Loading the model...";
@@ -43,7 +39,7 @@ export default function SkinDetection() {
             alt="preview"
           />
         </div>}
-      {predictionStatus === "predicting" && "Predicting..."}
+      {predictionStatus === "predicting" ? "Predicting..." : predictionStatus}
     </div>
   );
 }
