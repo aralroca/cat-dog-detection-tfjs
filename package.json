@@ -4,7 +4,8 @@
     "build": "snowpack build",
     "test": "jest",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+    "lint": "prettier --check \"src/**/*.{js,jsx}\"",
+    "deploy": "yarn build && gh-pages -d build"
   },
   "keywords": [
     "tensorflowjs",
@@ -22,6 +23,7 @@
     "@snowpack/app-scripts-preact": "1.4.0",
     "@testing-library/jest-dom": "5.5.0",
     "@testing-library/preact": "1.0.2",
+    "gh-pages": "3.1.0",
     "jest": "25.4.0",
     "prettier": "2.0.0",
     "snowpack": "2.5.0"
