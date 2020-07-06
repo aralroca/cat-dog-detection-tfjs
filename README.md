@@ -2,6 +2,8 @@
 
 Tensorflow.js project
 
+DEMO: https://cat-dog-detection-tfjs.vercel.app/
+
 ## Available Scripts
 
 ### npm start
