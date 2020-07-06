@@ -1,5 +1,8 @@
 {
   "extends": "@snowpack/app-scripts-preact",
   "scripts": {},
-  "plugins": []
+  "plugins": [],
+  "compilerOptions": {
+    "baseUrl": "/cat-dog-detection-tfjs/"
+  }
 }
