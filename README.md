@@ -2,8 +2,10 @@
 
 Tensorflow.js project
 
-Used dataset: https://www.kaggle.com/tongpython/cat-and-dog
-DEMO: https://cat-dog-detection-tfjs.vercel.app/
+* Used dataset: https://www.kaggle.com/tongpython/cat-and-dog
+* Demo app: https://cat-dog-detection-tfjs.vercel.app/
+
+<img src="./public/demo.png" alt="demo" />
 
 ## Available Scripts
 
