@@ -1,4 +1,4 @@
-# Skin cancer detection
+# Cat/Dog image detection
 
 Tensorflow.js project
 
