@@ -2,6 +2,7 @@
 
 Tensorflow.js project
 
+* Tutorial: https://aralroca.com/blog/cat-dog-classifier
 * Used dataset: https://www.kaggle.com/tongpython/cat-and-dog
 * Demo app: https://cat-dog-detection-tfjs.vercel.app/
 

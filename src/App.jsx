@@ -10,7 +10,7 @@ function App() {
         <a
           rel="noopener noreferrer"
           target="_blank"
-          href="https://aralroca.com/blog/cat-dog-detection"
+          href="https://aralroca.com/blog/cat-dog-classifier"
         >
           Read the tutorial
         </a>
